@@ -1,0 +1,80 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# =========================
+# Environment variables (IMPORTANT)
+# =========================
+.env
+.env.*
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# Airflow logs
+dags/logs/
+
+# =========================
+# dbt
+# =========================
+dbt_packages/
+target/
+dbt_modules/
+
+# =========================
+# Snowflake / credentials
+# =========================
+*.pem
+*.key
+*.p8
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build / packaging
+# =========================
+dist/
+build/
+*.egg-info/
+
+# =========================
+# uv (Python package manager)
+# =========================
+# keep lock file for reproducibility → DO NOT ignore uv.lock
+uv.lock
+
+# =========================
+# Docker
+# =========================
+*.pid
+*.cid
+docker-compose.override.yml
+
+
+dbt_profiles/
+dbt_profiles/profiles.yml

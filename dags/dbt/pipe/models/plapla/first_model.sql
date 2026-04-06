@@ -1,0 +1,1 @@
+SELECT * FROM staging.ERP_LOC_A101
