@@ -1,0 +1,11 @@
+snapshots:
+  - name: dim_customers
+    relation: ref('ephemeral_customers')
+    config:
+      schema: gold
+      unique_key: customer_id
+      strategy: check
+      check_cols: ['marital_status']
+      updated_at: create_date
+
+
