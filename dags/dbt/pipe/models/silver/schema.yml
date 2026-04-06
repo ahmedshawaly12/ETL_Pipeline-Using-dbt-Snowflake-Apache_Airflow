@@ -1,0 +1,79 @@
+version: 2
+
+models: 
+  - name: slv_crm_cust_info    ##  Table: slv_crm_cust_info
+    columns:
+      - name: cst_id
+        data_tests:
+          - unique
+          - not_null
+      - name: cst_material_status
+        data_tests:
+          - accepted_values:
+              arguments: 
+                values: ['Married', 'Single', 'n/a']
+      - name: cst_gndr
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Male', 'Female', 'n/a']
+      - name: cst_create_date
+        data_tests:
+          - future_dates_check
+  - name: slv_crm_prd_info     ##  Table: slv_crm_prd_info
+    columns:
+      - name: prd_id
+        data_tests:
+          - not_null
+          - unique
+      - name: prd_line
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Mountain', 'Road', 'Other Sales', 'Touring', 'n/a']
+      - name: prd_cost
+        data_tests:
+          - negative_values_check
+      - name: prd_start_dt
+        data_tests:
+          - future_dates_check
+  - name: slv_crm_sales_details          ##  Table: slv_crm_sales_details
+    columns:
+      - name: sls_order_dt
+        data_tests:
+          - future_dates_check
+      - name: sls_sales
+        data_tests: 
+          - negative_values_check
+      - name: sls_quantity
+        data_tests:
+          - negative_values_check
+      - name: sls_price
+        data_tests:
+          - negative_values_check
+  - name: slv_erp_cust_az12
+    columns:
+      - name: cid
+        data_tests:
+          - unique
+          - not_null
+      - name: bdate
+        data_tests:
+          - future_dates_check
+      - name: gen
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Male', 'Female', 'n/a']
+  - name: slv_erp_loc_a101
+    columns:
+      - name: cid
+        data_tests:
+          - unique
+          - not_null  
+  - name: slv_erp_px_cat_g1v2
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null 
