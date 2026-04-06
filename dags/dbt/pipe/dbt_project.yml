@@ -32,5 +32,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   pipe:
     # Config indicated by + and applies to all files under models/example/
-    plapla:
-      +materialized: view
+    bronze:
+      +materialized: table
+      +schema: bronze
