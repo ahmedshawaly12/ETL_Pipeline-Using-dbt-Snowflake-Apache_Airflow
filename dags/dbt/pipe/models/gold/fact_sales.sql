@@ -21,10 +21,10 @@ WITH base AS (
         sls_quantity AS quantity,
         sls_price AS price
     FROM {{ ref("slv_crm_sales_details") }} AS sls
-    LEFT JOIN {{ ref("dim_products") }} AS prd
+    {# LEFT JOIN {{ ref("dim_products") }} AS prd
     ON sls.sls_prd_key = prd.product_key and prd.end_date IS NULL
     LEFT JOIN {{ ref("dim_customers") }} AS cust
-    ON sls.sls_cust_id  = cust.customer_id and cust.dbt_valid_to IS NULL
+    ON sls.sls_cust_id  = cust.customer_id and cust.dbt_valid_to IS NULL #}
 
     
 
