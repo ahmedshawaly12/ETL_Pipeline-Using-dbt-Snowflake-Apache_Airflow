@@ -140,7 +140,6 @@ The pipeline is orchestrated as a single Airflow DAG with the following task seq
 ## Prerequisites
 
 - Docker & Docker Compose
-- Python 3.8+ with [uv](https://github.com/astral-sh/uv) (used for dependency management)
 - Snowflake account with appropriate roles and warehouse configured
 
 
@@ -195,5 +194,14 @@ dbt test --select gold
 
 ---
 
+## 🌟 About Me
+
+Hi there! I’m **Ahmed Shawaly**, a Data & Analytics Engineer passionate about building modern, scalable data systems.
 
 
+I enjoy building reliable data architectures, optimizing data pipelines, and transforming raw data into meaningful, business-ready insights.
+
+Let’s connect and share ideas!
+
+ [LinkedIn](https://www.linkedin.com/in/ahmed-shawaly/)  
+ ahmed.shawaly74@gmail.com
