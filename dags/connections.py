@@ -1,26 +1,27 @@
+import os
+from dotenv import load_dotenv
 import snowflake.connector
 import psycopg2
-import warnings
 
-warnings.filterwarnings("ignore")
+load_dotenv()
 
 
 def get_snowflake_connection():
     return snowflake.connector.connect(
-        user='dbt_user',
-        password='PassWord!',
-        account='QOOKLEG-XH49346',
-        warehouse='dbt_wh',
-        database='DataWarehouse',
-        schema='staging'
+        user=os.getenv("SF_USER"),
+        password=os.getenv("SF_PASSWORD"),
+        account=os.getenv("SF_ACCOUNT"),
+        warehouse=os.getenv("SF_WAREHOUSE"),
+        database=os.getenv("SF_DATABASE"),
+        schema=os.getenv("SF_SCHEMA")
     )
 
 
 def get_postgres_connection():
     return psycopg2.connect(
-        host="aws-1-us-east-1.pooler.supabase.com",
-        database="postgres",
-        user="postgres.xjeudtqlwcctjrwfgfpj",
-        password="FgZY4@c+QjMzQkr",
-        port=6543
+        host=os.getenv("PG_HOST"),
+        database=os.getenv("PG_DB"),
+        user=os.getenv("PG_USER"),
+        password=os.getenv("PG_PASSWORD"),
+        port=os.getenv("PG_PORT")
     )
