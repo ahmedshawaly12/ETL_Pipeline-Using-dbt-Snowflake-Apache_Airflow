@@ -2,6 +2,8 @@ from airflow.sdk import dag, task
 from airflow.models.baseoperator import chain
 from pendulum import datetime
 import os
+from ingest_crm import ingest_crm
+from ingest_erp import ingest_erp
 
 
 @dag(
@@ -25,13 +27,14 @@ def dbt_dag():
 
 
     ## ingestion
-    @task.bash
+    @task
     def crm_ingest_script():
-        return "echo hello"
-    
-    @task.bash
+        ingest_crm()
+
+
+    @task
     def erp_ingest_script():
-        return "echo hello"
+        ingest_erp()
 
     ## bronze 
     @task.bash
