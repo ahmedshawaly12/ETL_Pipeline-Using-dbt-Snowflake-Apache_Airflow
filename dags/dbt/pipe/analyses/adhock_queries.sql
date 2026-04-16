@@ -260,3 +260,8 @@ SELECT DISTINCT maintenance
 FROM {{ ref("brz_erp_px_cat_g1v2") }}
 
 
+---
+SELECT * FROM {{ ref("slv_crm_sales_details") }}
+
+SELECT * FROm {{ ref("dim_date") }}
+
